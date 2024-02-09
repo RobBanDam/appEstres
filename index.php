@@ -40,60 +40,60 @@
 					<br>
 					<br>
 
-					<!-- Preguntas -->
+					<form action="index.php" method="post">
+						<!-- Preguntas -->
+						<?php 
+							$preguntas = [
+								"Imposibilidad de conciliar el sueño.",
+								"Jaquecas y dolores de cabeza.",
+								"Indigestiones o molestias gastrointestinales.",
+								"Sensación de cansancio extremo o agotamiento.",
+								"Tendencia de comer, beber o fumar más de lo habitual.",
+								"Disminución del interés sexual.",
+								"Respiración entrecortada o sensación de ahogo.",
+								"Disminución del apetito. ",
+								"Temblores musculares (por ejemplo tics nerviosos o
+								parpadeos).",
+								"Pinchazos o sensaciones dolorosas en distintas partes
+								del cuerpo.",
+								"Tentaciones fuertes de no levantarse por la mañana.",
+								"Tendencias a sudar o palpitaciones."
+							];
+						?>
+						
+						<div class="card">
+							<div class="card-body">
+								<?php foreach($preguntas as $index => $pregunta){ ?>
+									
+									<span class="badge bg-light text-dark">
+										<?php echo $index +1;?>.-
+									</span>
+										<?php echo $pregunta;?>
+									<br>
 
-					<?php 
-						$preguntas = [
-							"Imposibilidad de conciliar el sueño.",
-							"Jaquecas y dolores de cabeza.",
-							"Indigestiones o molestias gastrointestinales.",
-							"Sensación de cansancio extremo o agotamiento.",
-							"Tendencia de comer, beber o fumar más de lo habitual.",
-							"Disminución del interés sexual.",
-							"Respiración entrecortada o sensación de ahogo.",
-							"Disminución del apetito. ",
-							"Temblores musculares (por ejemplo tics nerviosos o
-							parpadeos).",
-							"Pinchazos o sensaciones dolorosas en distintas partes
-							del cuerpo.",
-							"Tentaciones fuertes de no levantarse por la mañana.",
-							"Tendencias a sudar o palpitaciones."
-						];
-					?>
-					
-					<div class="card">
-						<div class="card-body">
-						<?php foreach($preguntas as $index => $pregunta){ ?>
-							
-							<span class="badge bg-light text-dark">
-								<?php echo $index +1;?>.-
-							</span>
-								<?php echo $pregunta;?>
-							<br>
-
-							<?php for($opcion = 1; $opcion <= 6; $opcion++){ ?>
-								<span class="badge color<?php echo $opcion; ?>">
-									<div class="form-check form-check-inline">
-										<input class="form-check-input" type="radio" name="pregunta<?php echo $index; ?>" value="<?php echo $opcion; ?>" required>
-										<label class="form-check-label" for=""><?php echo $opcion; ?></label>
-									</div>
-								</span>
-							<?php } ?>
-							
-							<br>
-						<?php } ?>
+									<?php for($opcion = 1; $opcion <= 6; $opcion++){ ?>
+										<span class="badge color<?php echo $opcion; ?>">
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="radio" name="pregunta<?php echo $index; ?>" value="<?php echo $opcion; ?>" required>
+												<label class="form-check-label" for=""><?php echo $opcion; ?></label>
+											</div>
+										</span>
+									<?php } ?>
+									
+									<br>
+								<?php } ?>
+							</div>
 						</div>
-					</div>
 
-					<br>
-					<button type="button" class="btn btn-primary">
-						Enviar 
-					</button>
+						<br>
+						<button type="submit" class="btn btn-primary">Enviar Respuestas</button>
+					</form>
 
 				</div>
 
 				<div class="col">
 					<h4>Respuestas</h4>
+					<?php print_r($_POST); ?>
 				</div>
 			</div>
 
