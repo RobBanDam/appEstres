@@ -9,6 +9,8 @@
 
 	<!-- Bootstrap CSS v5.2.1 -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+	<!-- Estilo -->
 	<link rel="stylesheet" href="style.css">
 </head>
 
@@ -68,47 +70,16 @@
 							</span>
 								<?php echo $pregunta;?>
 							<br>
-							<span class="badge color1">
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="pregunta1" value="option1" />
-									<label class="form-check-label" for="">1</label>
-								</div>
-							</span>
 
-							<span class="badge color2">
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="pregunta1" value="option1" />
-									<label class="form-check-label" for="">2</label>
-								</div>
-							</span>
-
-							<span class="badge color3">
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="pregunta1" value="option1" />
-									<label class="form-check-label" for="">3</label>
-								</div>
-							</span>
-
-							<span class="badge color4">
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="pregunta1" value="option1" />
-									<label class="form-check-label" for="">4</label>
-								</div>
-							</span>
-
-							<span class="badge color5">
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="pregunta1" value="option1" />
-									<label class="form-check-label" for="">5</label>
-								</div>
-							</span>
-
-							<span class="badge color6">
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="pregunta1" value="option1" />
-									<label class="form-check-label" for="">6</label>
-								</div>
-							</span>
+							<?php for($opcion = 1; $opcion <= 6; $opcion++){ ?>
+								<span class="badge color<?php echo $opcion; ?>">
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="pregunta<?php echo $index; ?>" value="<?php echo $opcion; ?>" required>
+										<label class="form-check-label" for=""><?php echo $opcion; ?></label>
+									</div>
+								</span>
+							<?php } ?>
+							
 							<br>
 						<?php } ?>
 						</div>
