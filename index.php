@@ -93,7 +93,22 @@
 
 				<div class="col">
 					<h4>Respuestas</h4>
-					<?php print_r($_POST); ?>
+					<?php  
+						if($_SERVER["REQUEST_METHOD"] === "POST"){
+							$respuestas = [];
+							$numeroPreguntas = count($preguntas);
+
+							for($i = 0; $i < $numeroPreguntas; $i++){
+								$respuesta = isset($_POST["pregunta$i"]) ? (int)$_POST["pregunta$i"] : 0;
+								
+								$respuestas[] = $respuesta;
+							}
+							$puntajeTotal = array_sum($respuestas);
+
+							
+						}
+					
+					?>
 				</div>
 			</div>
 
