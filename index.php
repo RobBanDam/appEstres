@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Title</title>
+	<title>Test</title>
 	<!-- Required meta tags -->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -19,6 +19,7 @@
 			<br>
 			<div class="row">
 				<div class="col">
+					<!-- Instrucciones -->
 					<h4>TEST DE ESTRÉS LABORAL</h4>
 					Permite conocer en qué grado el trabajador padece los síntomas asociados al estrés.
 
@@ -37,9 +38,35 @@
 					<br>
 					<br>
 
+					<!-- Preguntas -->
+
+					<?php 
+						$preguntas = [
+							"Imposibilidad de conciliar el sueño.",
+							"Jaquecas y dolores de cabeza.",
+							"Indigestiones o molestias gastrointestinales.",
+							"Sensación de cansancio extremo o agotamiento.",
+							"Tendencia de comer, beber o fumar más de lo habitual.",
+							"Disminución del interés sexual.",
+							"Respiración entrecortada o sensación de ahogo.",
+							"Disminución del apetito. ",
+							"Temblores musculares (por ejemplo tics nerviosos o
+							parpadeos).",
+							"Pinchazos o sensaciones dolorosas en distintas partes
+							del cuerpo.",
+							"Tentaciones fuertes de no levantarse por la mañana.",
+							"Tendencias a sudar o palpitaciones."
+						];
+					?>
+					
 					<div class="card">
 						<div class="card-body">
-							1.- Imposibilidad de conciliar el sueño.
+						<?php foreach($preguntas as $index => $pregunta){ ?>
+							
+							<span class="badge bg-light text-dark">
+								<?php echo $index +1;?>.-
+							</span>
+								<?php echo $pregunta;?>
 							<br>
 							<span class="badge color1">
 								<div class="form-check form-check-inline">
@@ -82,52 +109,8 @@
 									<label class="form-check-label" for="">6</label>
 								</div>
 							</span>
-
 							<br>
-							<br>
-							2.- Jaquecas y dolores de cabeza.
-							<br>
-							<span class="badge color1">
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="pregunta1" value="option1" />
-									<label class="form-check-label" for="">1</label>
-								</div>
-							</span>
-
-							<span class="badge color2">
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="pregunta1" value="option1" />
-									<label class="form-check-label" for="">2</label>
-								</div>
-							</span>
-
-							<span class="badge color3">
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="pregunta1" value="option1" />
-									<label class="form-check-label" for="">3</label>
-								</div>
-							</span>
-
-							<span class="badge color4">
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="pregunta1" value="option1" />
-									<label class="form-check-label" for="">4</label>
-								</div>
-							</span>
-
-							<span class="badge color5">
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="pregunta1" value="option1" />
-									<label class="form-check-label" for="">5</label>
-								</div>
-							</span>
-
-							<span class="badge color6">
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="pregunta1" value="option1" />
-									<label class="form-check-label" for="">6</label>
-								</div>
-							</span>
+						<?php } ?>
 						</div>
 					</div>
 
