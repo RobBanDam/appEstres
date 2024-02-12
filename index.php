@@ -86,7 +86,12 @@
 						</div>
 
 						<br>
-						<button type="submit" class="btn btn-primary">Enviar Respuestas</button>
+
+						<div class="d-grid gap-2">
+							<button type="submit" class="btn btn-primary">Enviar Respuestas</button>
+						</div>
+						<br>
+
 					</form>
 
 				</div>
@@ -105,7 +110,48 @@
 							}
 							$puntajeTotal = array_sum($respuestas);
 
-							
+							if($puntajeTotal <= 12){
+								$nivelEstres = "Sin estrés";
+								$mensaje = "
+								<div class='alert alert-info' role='alert'>
+									No existe síntoma alguno de estrés.
+								</div>";
+							}elseif($puntajeTotal <= 24){
+								$nivelEstres = "Sin estrés";
+								$mensaje = "
+								<div class='alert alert-primary' role='alert'>
+									Tienes un buen equilibrio, continúa así y contagia a los
+								demás de tus estrategias de afrontamiento!
+								</div>";
+							}elseif($puntajeTotal <= 36){
+								$nivelEstres = "Estrés leve";
+								$mensaje = "
+								<div class='alert alert-success' role='alert'>
+									Te encuentras en fase de alarma, trata de identificar el o los factores que te causan estrés para poder ocuparte de ellos de manera preventiva.
+								</div>";
+							}elseif($puntajeTotal <= 48){
+								$nivelEstres = "Estrés medio";
+								$mensaje = "
+								<div class='alert alert-warning' role='alert'>
+									Haz conciencia de la situación en la que te encuentras y trata de ubicar qué puedes modificar, ya que si la situación estresante se prolonga, puedes romper tu equilibrio entre lo laboral y lo personal. No agotes tus resistencias!
+								</div>";
+							}elseif($puntajeTotal <= 60){
+								$nivelEstres = "Estrés Alto";
+								$mensaje = "
+								<div class='alert alert-warning' role='alert'>
+									Te encuentras en una fase de agotamiento de recursos fisiológicos con desgaste físico y mental. Esto puede tener consecuencias más serias para tu salud.
+								</div>";
+							}else{
+								$nivelEstres = "Estrés grave";
+								$mensaje = "
+								<div class='alert alert-danger' role='alert'>
+									Busca ayuda con un profesional
+								</div>";
+							}
+
+							echo "<br> <strong>Puntuaje Obtenido: </strong>" . $puntajeTotal;
+							echo "<br> <strong>Nivel de Estrés: </strong>" . $nivelEstres;
+							echo "<br> <strong>Mensaje Obtenido: </strong> <br><br>" . $mensaje;
 						}
 					
 					?>
