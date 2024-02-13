@@ -20,7 +20,7 @@
 		<div class="container">
 			<br>
 			<div class="row">
-				<div class="col">
+				<div class="col-lg-6">
 					<!-- Instrucciones -->
 					<h4>TEST DE ESTRÉS LABORAL</h4>
 					Permite conocer en qué grado el trabajador padece los síntomas asociados al estrés.
@@ -80,6 +80,7 @@
 										</span>
 									<?php } ?>
 									
+									<br>
 									<br>
 								<?php } ?>
 							</div>
